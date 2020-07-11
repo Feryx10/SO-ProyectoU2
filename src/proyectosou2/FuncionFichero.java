@@ -16,27 +16,10 @@
  */
 package proyectosou2;
 
-class Fuente {
-    String nombre;
-    int id;
+import java.util.ArrayList;
 
-    public Fuente(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }   
+public interface FuncionFichero {    
+    public void escribir(String direccion, Caso caso);    
+    public String leer(String direccion);    
 }
+
