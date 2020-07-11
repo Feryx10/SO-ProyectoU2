@@ -1,22 +1,33 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright (C) 2020 
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 package proyectosou2;
 
-/**
- *
- * @author Luciano
- */
+import java.util.Calendar;
+
 public class Caso {
-    String nombrePaciente;
-    Fuente fuente;
-    Region region;
-    int id;
-    String hora;
+    private String nombrePaciente;
+    private Fuente fuente;
+    private Region region;
+    private int id;
+    private String hora;
+    private String estado;
 
     public Caso() {
+        this.hora = Calendar.getInstance().getCalendarType();
     }
 
     public String getNombrePaciente() {
@@ -57,8 +68,10 @@ public class Caso {
 
     public void setHora(String hora) {
         this.hora = hora;
+    } 
+    
+    @Override
+    public String toString(){
+        return id+" ["+hora+"]["+region.getNombre()+"/"+fuente.nombre+"] Nombre:"+nombrePaciente+"\n Estado:"+estado;
     }
-    
-    
-    
 }
