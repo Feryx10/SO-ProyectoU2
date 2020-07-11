@@ -23,12 +23,12 @@ class PrintDemo {
     }
 }
 
-class ThreadDemo extends Thread {
+class procesarCaso extends Thread  {
    private Thread t;
    private String threadName;
    PrintDemo  PD;
 
-   ThreadDemo( String name,  PrintDemo pd) {
+   procesarCaso( String name,  PrintDemo pd) {
       threadName = name;
       PD = pd;
    }
@@ -55,8 +55,8 @@ public class TestThread {
    public static void main(String args[]) {
       PrintDemo PD = new PrintDemo();
 
-      ThreadDemo T1 = new ThreadDemo( "Thread - 1 ", PD );
-      ThreadDemo T2 = new ThreadDemo( "Thread - 2 ", PD );
+      procesarCaso T1 = new procesarCaso( "Thread - 1 ", PD );
+      procesarCaso T2 = new procesarCaso( "Thread - 2 ", PD );
 
       T1.start();
       T2.start();
