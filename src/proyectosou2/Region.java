@@ -13,14 +13,14 @@ import java.util.ArrayList;
  */
 class Region {
     
-    int nombre;
+    String nombre;
     int contadoctor = 0;
     int contalab = 0;
     ArrayList<Fuente> doctores = new ArrayList<Fuente>();
     ArrayList<Fuente> laboratorios = new ArrayList<Fuente>();
     ArrayList<Caso> casos = new ArrayList<Caso>();
 
-    public Region(int nombre) {
+    public Region(String nombre) {
         this.nombre = nombre;
         
     }
@@ -66,7 +66,15 @@ class Region {
     {
         return laboratorios.get(i);
     }
-            
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+            
+    
     
 }
