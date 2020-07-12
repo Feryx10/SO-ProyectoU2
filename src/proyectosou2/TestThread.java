@@ -23,6 +23,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -81,8 +82,118 @@ public class TestThread implements FuncionFichero {
     
    public static void main(String args[]) {
       
+        
+       
+        System.out.println("Bienvenido a la APP");
+        int entrada=0;
+        int region = 0;
+        boolean program = true;
+        Scanner sc = new Scanner(System.in);
+        while(program) {
+            System.out.println("");
+            System.out.println("");
+            System.out.println("[1] Ingrese como administrador");
+            System.out.println("[2] Generar N casos aleatorios");
+            System.out.println("[3] Iniciar Simulación");
+            System.out.println("[4] Funciones del servicio de salud");
+            System.out.println("[0] Salir");
+            
+            
+            System.out.print("Ingrese un número: ");
+            entrada= sc.nextInt();
+            
+            if (entrada<0 || entrada >4) {
+                System.out.println("");
+                System.out.println("Entrada inválida");
+                System.out.println("");
+            }
+            
+            if (entrada==1) {
+                int ent2=0;
+                System.out.println("");
+                System.out.println("[1] Generar N doctores y laboratorios aleatorios");
+                System.out.print("Ingrese un número: ");
+                ent2=sc.nextInt();
+                
+                if (ent2==1) {
+                    System.out.println("");
+                    System.out.println("Elija región");
+                    System.out.println("[1] Región A");
+                    System.out.println("[2] Región B");
+                    System.out.print("Ingrese un número: ");
+                    region=sc.nextInt();
+                    
+                    if (region>2 || region <1) {
+                        System.out.println("");
+                        System.out.println("Entrada inválida");
+                        System.out.println("");
+                    }
+                    else {
+                        int cant_doctores=0;
+                        int cant_lab=0;
+                        
+                        System.out.print("Ingrese cantidad de doctores: ");
+                        cant_doctores=sc.nextInt();
+                        System.out.print("Ingrese cantidad de laboratorios: ");
+                        cant_lab = sc.nextInt();
+                    }
+                }
+                else {
+                    System.out.println("Entrada inválida");
+                }                                      
+            }
+            
+            if (entrada==2) {
+                System.out.println("");
+                System.out.println("Elija región");
+                System.out.println("[1] Región A");
+                System.out.println("[2] Región B");
+                System.out.print("Ingrese un número: ");
+                region=sc.nextInt();
+                    
+                if (region>2 || region <1) {
+                    System.out.println("");
+                    System.out.println("Entrada inválida");
+                    System.out.println("");
+                }
+                
+                else {
+                    int cant_contagiados=0;
+                    int cant_muertos=0;
+                        
+                    System.out.print("Ingrese cantidad de contagiados: ");
+                    cant_contagiados=sc.nextInt();
+                    System.out.print("Ingrese cantidad de muertos: ");
+                    cant_muertos = sc.nextInt();
+                }
+            }
+            
+            if (entrada==3) {
+                
+                int dias=0;
+                System.out.print("Ingrese cantidad de días: ");
+                dias=sc.nextInt();
+            }
+            
+            if (entrada==4) {
+                System.out.println("");
+                System.out.println("[1] Eliminar Caso");
+                System.out.println("[2] Modificar Caso");
+                System.out.println("[3] Exportar Caso");
+                
+                System.out.print("Ingrese un número: ");
+                int ent2=sc.nextInt();
+                
+            }
+            
+            if (entrada==0) {
+                program=false;
+            }
+            
+            
+        }
       
-        iniciarSimulacion();
+        //iniciarSimulacion();
 
       
    }
