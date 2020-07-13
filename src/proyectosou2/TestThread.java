@@ -235,7 +235,38 @@ public class TestThread {
                                 "ShampooBaker\n" +
                                 "Ubega\n" +
                                 "Writiner";
-       
+        
+        String nombreCasos =    "Maria Gonzalez\n"+
+                                "Juan Rojas\n"+
+                                "Jose Diaz\n"+
+                                "Luis Perez\n"+
+                                "Carlos Soto\n"+
+                                "Jorge Contreras\n"+
+                                "Ana Silva\n"+
+                                "Rosa Martinez\n"+
+                                "Manuel Sepulveda\n"+
+                                "Cristian Morales\n"+
+                                "Victor Rodriguez\n"+
+                                "Francisco Lopez\n"+
+                                "Hector Araya\n"+
+                                "Patricia Fuentes\n"+
+                                "Sergio Hernandez\n"+
+                                "Pedro Torres\n"+
+                                "Claudia Espinoza\n"+
+                                "Carolina Flores\n"+
+                                "Rodrigo Castillo\n"+
+                                "Miguel Valenzuela\n"+
+                                "Eduardo Ramirez\n"+
+                                "Patricio Reyes\n"+
+                                "Claudio Gutierrez\n"+
+                                "Mario Castro\n"+
+                                "Jaime Vargas\n"+
+                                "Ricardo Alvarez\n"+
+                                "Pablo Vasquez\n"+
+                                "Alejandro Tapia\n"+
+                                "Margarita Fernandez\n"+
+                                "Carmen Lopez\n";
+                
         String[] arrDocs = nombres.split("\n"); 
   
         for (int i=0; i<cantDocs; i++) 

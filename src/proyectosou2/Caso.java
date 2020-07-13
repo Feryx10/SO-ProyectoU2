@@ -22,14 +22,18 @@ public class Caso {
     private String nombrePaciente;
     private Fuente fuente;
     private Region region;
-    private int id;
+    private final int id = this.hashCode();
     private String hora;
     private String estado;
 
-    public Caso() {
+    public Caso(String nombrePaciente, Fuente fuente, Region region, String estado) {
+        this.nombrePaciente = nombrePaciente;
+        this.fuente = fuente;
+        this.region = region;               
         this.hora = Calendar.getInstance().getCalendarType();
+        this.estado = estado;       
     }
-
+    
     public String getNombrePaciente() {
         return nombrePaciente;
     }
@@ -54,13 +58,9 @@ public class Caso {
         this.region = region;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    public int getId() {            
+        return this.hashCode();
+    }  
 
     public String getHora() {
         return hora;
@@ -69,9 +69,17 @@ public class Caso {
     public void setHora(String hora) {
         this.hora = hora;
     } 
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
     @Override
     public String toString(){
-        return id+" ["+hora+"]["+region.getNombre()+"/"+fuente.nombre+"] Nombre:"+nombrePaciente+"\n Estado:"+estado;
+        return " ["+hora+"]: "+this.hashCode()+" "+region.getNombre()+"/"+fuente.nombre+" Nombre:"+nombrePaciente+"\n Estado:"+estado;
     }
 }
