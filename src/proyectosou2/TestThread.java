@@ -50,22 +50,24 @@ class PrintDemo {
 
 class procesarCaso extends Thread  {
     private Thread t;
-    private String nombreRegion;
+    private Region region;
     private int idFuente;
     private String fuente;
+    private int caso;
     PrintDemo  PD;
 
-    procesarCaso( Region region,  PrintDemo pd, String fuente) {
-       nombreRegion = region.getNombre();
+    procesarCaso( Region region, PrintDemo pd, int caso) {
        PD = pd;
-       this.fuente = fuente;
+       this.fuente = region.getCaso(caso).getFuente().getNombre();
+       this.caso = caso;
+       this.region=region;
     }
    
     public void run() {
         synchronized(PD) {
-            new Fichero().escribir("region1", new Caso("enfero enfermado",new Fuente("Doctor pino"), new Region (nombreRegion), "maomeno"));
+            new Fichero().escribir(region.getNombre(), region.getCaso(caso));
             
-            PD.printCount(nombreRegion, fuente);
+            PD.printCount(region.getNombre(), fuente);
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
@@ -156,10 +158,10 @@ public class TestThread {
             
             if (entrada==3) {
                 
-                int dias=0;
-                iniciarSimulacion();
+                int dias=0;                
                 System.out.print("Ingrese cantidad de días: ");
                 dias=sc.nextInt();
+                iniciarSimulacion(dias);
             }
             
             if (entrada==4) {
@@ -303,43 +305,49 @@ public class TestThread {
    
    
    
-   public static void iniciarSimulacion() throws InterruptedException
+   public static void iniciarSimulacion(int dias) throws InterruptedException
    {    
        
  
         PrintDemo PD1 = new PrintDemo();
         PrintDemo PD2 = new PrintDemo();
+        int casosDiarios = (region1.cantidadCasos()*2/dias);
         
         
-        
-
+        int numCasos = 0;
       // wait for threads to end
-        for (int i = 1; i < 10; i++) {
-            
+        for (int i = 1; i < dias; i++) {
             System.out.println("Dia: "+i);
-            procesarCaso regionUnoLaboratirios = new procesarCaso( region1, PD1, "Lab" );
-            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD2, "Doc" );
-            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD1, "Lab");
-            procesarCaso regionsDosDoctorees = new procesarCaso( region2, PD2, "Doc" );
-            regionUnoLaboratirios.start();
-            regionUnoDoctores.start();
-            regionDosLaboratorios.start();
-            regionsDosDoctorees.start();
-            regionUnoLaboratirios.start();
-            regionUnoDoctores.start();
-            regionDosLaboratorios.start();
-            regionsDosDoctorees.start();
-            try {
+            for (int j = 0; j < casosDiarios; j++) {
+                procesarCaso regionUnoLaboratirios = new procesarCaso( region1, PD1, numCasos);
+                procesarCaso regionUnoDoctores = new procesarCaso( region1, PD2,  numCasos);
+                procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD1, numCasos);
+                procesarCaso regionsDosDoctorees = new procesarCaso( region2, PD2,  numCasos);
+                regionUnoLaboratirios.start();
+                regionUnoDoctores.start();
+                regionDosLaboratorios.start();
+                regionsDosDoctorees.start();
+                
+                try {
                 regionUnoLaboratirios.join();
                 regionUnoDoctores.join();
                 regionDosLaboratorios.join();
                 regionsDosDoctorees.join();
-            } 
-            catch ( Exception e) 
-            {
-                System.out.println("Interrupted");
-            }
-            TimeUnit.SECONDS.sleep(1);
+                } 
+                catch ( Exception e) 
+                {
+                    System.out.println("Interrupted");
+                }
+                TimeUnit.SECONDS.sleep(1);
+                numCasos++;
+
+                }
+            
+            
+            
+            
+            
+
            
         }
         

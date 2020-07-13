@@ -80,7 +80,16 @@ class Region {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    public int cantidadCasos()
+    {
+        return casos.size();
+    }
             
+    public Caso getCaso(int i)
+    {
+        return casos.get(i);
+    }
     
     
 }
