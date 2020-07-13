@@ -17,12 +17,12 @@
 package proyectosou2;
 
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Caso {
     private String nombrePaciente;
     private Fuente fuente;
-    private Region region;
-    private final int id = this.hashCode();
+    private Region region;   
     private String hora;
     private String estado;
 
@@ -30,7 +30,7 @@ public class Caso {
         this.nombrePaciente = nombrePaciente;
         this.fuente = fuente;
         this.region = region;               
-        this.hora = Calendar.getInstance().getCalendarType();
+        this.hora = Calendar.getInstance().getTime().toString();
         this.estado = estado;       
     }
     
@@ -80,6 +80,32 @@ public class Caso {
     
     @Override
     public String toString(){
-        return " ["+hora+"]: "+this.hashCode()+" "+region.getNombre()+"/"+fuente.nombre+" Nombre:"+nombrePaciente+"\n Estado:"+estado;
+        return " ["+hora+"]: "+this.getId()+" "+region.getNombre()+"/"+fuente.nombre+" Nombre:"+nombrePaciente+"\n Estado:"+estado;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Caso other = (Caso) obj;
+        if (!Objects.equals(this.nombrePaciente, other.nombrePaciente)) {
+            return false;
+        }
+        return Objects.equals(this.region.getNombre(), other.region.getNombre());
+    }
+
+    @Override
+    public int hashCode(){
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.nombrePaciente);
+        hash = 29 * hash + Objects.hashCode(this.region.getNombre());
+        return hash;
     }
 }
