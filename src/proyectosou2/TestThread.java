@@ -19,9 +19,11 @@ package proyectosou2;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import static java.lang.Thread.sleep;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
@@ -59,10 +61,11 @@ class procesarCaso extends Thread  {
        this.fuente = fuente;
     }
    
-   public void run() {
-      synchronized(PD) {
-         PD.printCount(nombreRegion, fuente);
-    //     new Fichero().escribir(nombreRegion, new Caso());
+    public void run() {
+        synchronized(PD) {
+            new Fichero().escribir("region1", new Caso("enfero enfermado",new Fuente("Doctor pino"), new Region (nombreRegion), "maomeno"));
+            
+            PD.printCount(nombreRegion, fuente);
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
@@ -361,18 +364,20 @@ class Fichero implements FuncionFichero {
     
     @Override
     public void escribir(String nombreArchivo, Caso caso) {        
-       try {               
-            File file = new File("/"+nombreArchivo+".txt");      
+       try {
+            File file = new File(nombreArchivo+".txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
-            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            FileOutputStream fos = new FileOutputStream(file, true);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             bw.write(caso.toString());
             bw.newLine();
+            bw.close();
        } catch (IOException ex) {
            System.out.println(ex.getMessage());
        }
-    }   
+    }
 
     @Override
     public String[] leer(String nombreArchivo) { 
