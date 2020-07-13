@@ -61,10 +61,11 @@ class procesarCaso extends Thread  {
        this.fuente = fuente;
     }
    
-   public void run() {
-      synchronized(PD) {
-         PD.printCount(nombreRegion, fuente);
-         new Fichero().escribir("region1", new Caso("enfero enfermado",new Fuente("Doctor pino"), new Region (nombreRegion), "maomeno"));
+    public void run() {
+        synchronized(PD) {
+            new Fichero().escribir("region1", new Caso("enfero enfermado",new Fuente("Doctor pino"), new Region (nombreRegion), "maomeno"));
+            
+            PD.printCount(nombreRegion, fuente);
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
@@ -364,11 +365,11 @@ class Fichero implements FuncionFichero {
     @Override
     public void escribir(String nombreArchivo, Caso caso) {        
        try {
-       /*    File file = new File("/"+nombreArchivo+".txt");
+            File file = new File(nombreArchivo+".txt");
             if (!file.exists()) {
                 file.createNewFile();
-            }*/
-            FileOutputStream fos = new FileOutputStream("/"+nombreArchivo+".txt");
+            }
+            FileOutputStream fos = new FileOutputStream(file, true);
             BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
             bw.write(caso.toString());
             bw.newLine();

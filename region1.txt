@@ -1,0 +1,362 @@
+ [gregory]: 1231297389 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1637470039 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 737694607 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1465806831 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1927918380 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1547619391 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 769479435 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1441208256 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1017123067 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1599581441 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2039492759 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2120293582 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 499591116 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2145037147 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2124865807 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 701624806 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1052826829 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 404577308 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 135608148 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 983980576 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 116071444 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1381791961 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 9589873 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 988456737 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 925338864 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 455480019 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 345859583 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1120455864 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1434575726 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2017439170 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1540334470 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1476460409 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 172662276 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1212950337 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 338537012 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1241242781 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 654909545 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1527578002 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1637470039 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 737694607 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1927918380 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1547619391 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1429559356 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 769479435 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1441208256 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1017123067 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1599581441 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2039492759 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 499591116 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1002125495 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2145037147 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1052826829 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2124865807 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 135608148 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 404577308 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 983980576 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 116071444 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 988456737 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 925338864 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1963839813 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1691423806 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1575478428 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1926854821 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 774151477 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1883651970 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 202525796 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 95464147 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 13673771 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1892203997 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1598472625 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 654909545 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 77552928 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1812549277 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1637470039 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 737694607 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1927918380 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1465806831 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 769479435 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1547619391 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1441208256 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1017123067 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1599581441 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2039492759 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2120293582 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 499591116 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2124865807 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2145037147 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1052826829 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 701624806 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 6963138 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 983980576 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1645874769 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 452864434 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1503434645 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1668494558 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 345859583 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 455480019 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2017439170 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1540334470 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 172662276 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1476460409 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1598472625 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1812549277 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 77552928 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 979056465 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 249215196 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 115730898 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1335342209 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1409185260 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1527578002 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1637470039 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 737694607 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1927918380 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 769479435 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1441208256 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1599581441 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1017123067 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 701624806 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1052826829 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1075622473 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 227406106 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 6963138 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1645874769 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 452864434 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1791473811 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1963839813 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1691423806 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1503434645 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1668494558 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 774151477 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1883651970 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1540334470 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 2017439170 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 338537012 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1212950337 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1241242781 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 654909545 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 249215196 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 249276812 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 115730898 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1335342209 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1189817632 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 442957918 Maule/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1291583403 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 646732470 Bio-Bio/Doctor pino Nombre:enfero enfermadoEstado:maomeno
+
+ [gregory]: 1927918380 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 737694607 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 750161143 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1465806831 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 769479435 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1441208256 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1017123067 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1599581441 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2039492759 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 499591116 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2120293582 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1002125495 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1052826829 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 2124865807 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 701624806 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1075622473 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 404577308 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 116071444 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 6963138 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 983980576 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 988456737 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1381791961 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 925338864 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1691423806 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1926854821 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1575478428 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1883651970 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 774151477 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1892203997 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 95464147 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 13673771 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 202525796 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 654909545 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1598472625 Maule/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 77552928 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
+ [gregory]: 1812549277 Bio-Bio/Doctor pino Nombre:enfero enfermado
+ Estado:maomeno
