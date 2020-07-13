@@ -19,7 +19,7 @@ package proyectosou2;
 import java.util.ArrayList;
 
 public interface FuncionFichero {    
-    public void escribir(String direccion, Caso caso);    
-    public String leer(String direccion);    
+    public void escribir(String nombreArchivo, Caso caso);    
+    public String[] leer(String nombreArchivo);    
 }
 

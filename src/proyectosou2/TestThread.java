@@ -22,7 +22,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,7 +30,7 @@ class PrintDemo {
     
     public void printCount(String nombre, String fuente) {
         try {
-            System.out.println("Starting " +  nombre +", "+ fuente );
+            System.out.println("Starting " +  nombre +", "+ fuente );            
             for(int i = 5; i > 0; i--) 
             {
          //       System.out.println("Counter   ---   "  + i );
@@ -61,6 +60,7 @@ class procesarCaso extends Thread  {
    public void run() {
       synchronized(PD) {
          PD.printCount(nombreRegion, fuente);
+         new Fichero().escribir(nombreRegion, new Caso());
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
@@ -75,7 +75,7 @@ class procesarCaso extends Thread  {
    }
 }
 
-public class TestThread implements FuncionFichero {
+public class TestThread {
 
     static Region region1 = new Region("Maule");
     static Region region2 = new Region("Bio-Bio");
@@ -199,9 +199,7 @@ public class TestThread implements FuncionFichero {
    }
    
    public static void iniciarSimulacion()
-   {
-        
-        
+   {       
         PrintDemo PD1 = new PrintDemo();
         PrintDemo PD2 = new PrintDemo();
         procesarCaso regionUnoLaboratirios = new procesarCaso( region1, PD1, "Lab" );
@@ -222,32 +220,45 @@ public class TestThread implements FuncionFichero {
         } catch ( Exception e) {
             System.out.println("Interrupted");
         }
-   }
+   }   
+}
 
+class Fichero implements FuncionFichero {
+    
+    public Fichero(){    
+    }
+    
     @Override
-    public void escribir(String direccion, Caso caso) {        
-       try {
-           BufferedWriter bw = new BufferedWriter(new FileWriter(direccion));
-           bw.write(caso.toString() + "\n");
+    public void escribir(String nombreArchivo, Caso caso) {        
+       try {               
+            File file = new File("/"+nombreArchivo+".txt");      
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            bw.write(caso.toString());
+            bw.newLine();
        } catch (IOException ex) {
-           Logger.getLogger(TestThread.class.getName()).log(Level.SEVERE, null, ex);
+           System.out.println(ex.getMessage());
        }
-      
     }   
 
     @Override
-    public String leer(String direccion) {           
-       try {
-           BufferedReader br = new BufferedReader(new FileReader(new File(direccion)));
-           String linea;
-           String aux = "";
-           while((linea = br.readLine())!=null){
-               
-           }
-           
+    public String[] leer(String nombreArchivo) { 
+       String[]aux = null;       
+       try {        
+            File file = new File("/"+nombreArchivo+".txt");      
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String linea;              
+            while((linea = br.readLine())!=null){
+                aux = linea.split("");
+            }        
        } catch (IOException ex) {
-           Logger.getLogger(TestThread.class.getName()).log(Level.SEVERE, null, ex);
+           System.out.println(ex.getMessage());
        }
-       return "jaja";
-    }
+       return aux;
+    }    
 }
