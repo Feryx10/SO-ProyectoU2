@@ -32,9 +32,11 @@ import java.util.logging.Logger;
 
 class PrintDemo {    
     
-    public void printCount(String nombre, String fuente) {
+    boolean ocupado;
+    public void printCount(String nombre, String fuente) throws InterruptedException {
+        ocupado = true;
         try {
-            System.out.println("Starting " +  nombre +", "+ fuente );            
+            System.out.println("Region: " +  nombre +", Fuente:"+ fuente + " Inicia" );            
             for(int i = 5; i > 0; i--) 
             {
          //       System.out.println("Counter   ---   "  + i );
@@ -42,8 +44,17 @@ class PrintDemo {
         } catch (Exception e) {
             System.out.println("Thread  interrupted.");
         }
-        System.out.println("Thread " +  nombre+", "+fuente + " exiting.");
         
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("Region: " +  nombre+", Fuente: "+fuente + " Finaliza.");
+        ocupado=false;
+        
+        
+    }
+    
+    public boolean ocupado()
+    {
+        return ocupado;
     }
 }
 
@@ -58,16 +69,21 @@ class procesarCaso extends Thread  {
 
     procesarCaso( Region region, PrintDemo pd, int caso) {
        PD = pd;
-       this.fuente = region.getCaso(caso).getFuente().getNombre();
+       this.fuente = region.getCasoID(caso).getFuente().getNombre();
        this.caso = caso;
        this.region=region;
     }
    
     public void run() {
         synchronized(PD) {
-            new Fichero().escribir(region.getNombre(), region.getCaso(caso));
+            new Fichero().escribir(region.getNombre(), region.getCasoID(caso));
             
-            PD.printCount(region.getNombre(), fuente);
+            try {
+                PD.printCount(region.getNombre(), fuente);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(procesarCaso.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
@@ -133,27 +149,11 @@ public class TestThread {
             
             if (entrada==2) {
                 System.out.println("");
-                System.out.println("Elija región");
-                System.out.println("[1] Región A");
-                System.out.println("[2] Región B");
-                System.out.print("Ingrese un número: ");
-                region=sc.nextInt();
-                    
-                if (region>2 || region <1) {
-                    System.out.println("");
-                    System.out.println("Entrada inválida");
-                    System.out.println("");
-                }
+                System.out.print("Ingrese cantidad de casos: ");
+                int cant_casos=0;
+                cant_casos = sc.nextInt();
+                generarCasos(cant_casos);
                 
-                else {
-                    int cant_contagiados=0;
-                    int cant_muertos=0;
-                        
-                    System.out.print("Ingrese cantidad de contagiados: ");
-                    cant_contagiados=sc.nextInt();
-                    System.out.print("Ingrese cantidad de muertos: ");
-                    cant_muertos = sc.nextInt();
-                }
             }
             
             if (entrada==3) {
@@ -241,36 +241,7 @@ public class TestThread {
                                 "Ubega\n" +
                                 "Writiner";
         
-        String nombreCasos =    "Maria Gonzalez\n"+
-                                "Juan Rojas\n"+
-                                "Jose Diaz\n"+
-                                "Luis Perez\n"+
-                                "Carlos Soto\n"+
-                                "Jorge Contreras\n"+
-                                "Ana Silva\n"+
-                                "Rosa Martinez\n"+
-                                "Manuel Sepulveda\n"+
-                                "Cristian Morales\n"+
-                                "Victor Rodriguez\n"+
-                                "Francisco Lopez\n"+
-                                "Hector Araya\n"+
-                                "Patricia Fuentes\n"+
-                                "Sergio Hernandez\n"+
-                                "Pedro Torres\n"+
-                                "Claudia Espinoza\n"+
-                                "Carolina Flores\n"+
-                                "Rodrigo Castillo\n"+
-                                "Miguel Valenzuela\n"+
-                                "Eduardo Ramirez\n"+
-                                "Patricio Reyes\n"+
-                                "Claudio Gutierrez\n"+
-                                "Mario Castro\n"+
-                                "Jaime Vargas\n"+
-                                "Ricardo Alvarez\n"+
-                                "Pablo Vasquez\n"+
-                                "Alejandro Tapia\n"+
-                                "Margarita Fernandez\n"+
-                                "Carmen Lopez\n";
+        
                 
         String[] arrDocs = nombres.split("\n"); 
   
@@ -302,7 +273,79 @@ public class TestThread {
         
    }
    
-   
+   public static void generarCasos(int cantCasos)
+   {
+       String nombreCasos =    "Maria Gonzalez\n"+
+                                "Juan Rojas\n"+
+                                "Jose Diaz\n"+
+                                "Luis Perez\n"+
+                                "Carlos Soto\n"+
+                                "Jorge Contreras\n"+
+                                "Ana Silva\n"+
+                                "Rosa Martinez\n"+
+                                "Manuel Sepulveda\n"+
+                                "Cristian Morales\n"+
+                                "Victor Rodriguez\n"+
+                                "Francisco Lopez\n"+
+                                "Hector Araya\n"+
+                                "Patricia Fuentes\n"+
+                                "Sergio Hernandez\n"+
+                                "Pedro Torres\n"+
+                                "Claudia Espinoza\n"+
+                                "Carolina Flores\n"+
+                                "Rodrigo Castillo\n"+
+                                "Miguel Valenzuela\n"+
+                                "Eduardo Ramirez\n"+
+                                "Patricio Reyes\n"+
+                                "Claudio Gutierrez\n"+
+                                "Mario Castro\n"+
+                                "Jaime Vargas\n"+
+                                "Ricardo Alvarez\n"+
+                                "Pablo Vasquez\n"+
+                                "Alejandro Tapia\n"+
+                                "Margarita Fernandez\n"+
+                                "Carmen Lopez\n";
+       
+       String[] arrCasos = nombreCasos.split("\n"); 
+       int randomgRegion;
+        for (int i=0; i<cantCasos; i++) 
+        {
+            randomgRegion = ((int)Math.floor(Math.random()*2)); //random de region
+            
+            if (randomgRegion==1)
+            {
+                if((int)Math.floor(Math.random()*2) == 1) //Random de dar caso a laboratorio o doctor
+                {
+                    Caso caso = new Caso(arrCasos[i], region1.obtenerDoctor((int)Math.floor(Math.random()*region1.sizeDoctores())), region1, "Fallecido");
+                    region1.agregarCaso(caso);
+                }
+                else
+                {
+                    Caso caso = new Caso(arrCasos[i], region1.obtenerLaboratorio((int)Math.floor(Math.random()*region1.sizeLaboratorios())), region1, "Contagiado");
+                    region1.agregarCaso(caso);
+                }
+                
+            }
+            else
+            {
+                if((int)Math.floor(Math.random()*2) == 1)// Random de dar caso a lab o doc
+                {
+                    
+                    Caso caso = new Caso(arrCasos[i], region2.obtenerDoctor((int)Math.floor(Math.random()*region2.sizeDoctores())), region2, "Fallecido");
+                    region1.agregarCaso(caso);
+            
+                }
+                else
+                {
+                    Caso caso = new Caso(arrCasos[i], region2.obtenerLaboratorio((int)Math.floor(Math.random()*region2.sizeLaboratorios())), region2, "Contagiado");
+                    region2.agregarCaso(caso);
+                }
+                
+            }
+            
+        }
+       
+   }
    
    
    public static void iniciarSimulacion(int dias) throws InterruptedException
@@ -311,43 +354,111 @@ public class TestThread {
  
         PrintDemo PD1 = new PrintDemo();
         PrintDemo PD2 = new PrintDemo();
-        int casosDiarios = (region1.cantidadCasos()*2/dias);
-        
+        int totalCasos = (region1.cantidadCasos()+region2.cantidadCasos());
+        int finDia;
         
         int numCasos = 0;
       // wait for threads to end
-        for (int i = 1; i < dias; i++) {
+        for (int i = 1; i < totalCasos; i++) {
             System.out.println("Dia: "+i);
-            for (int j = 0; j < casosDiarios; j++) {
-                procesarCaso regionUnoLaboratirios = new procesarCaso( region1, PD1, numCasos);
-                procesarCaso regionUnoDoctores = new procesarCaso( region1, PD2,  numCasos);
-                procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD1, numCasos);
-                procesarCaso regionsDosDoctorees = new procesarCaso( region2, PD2,  numCasos);
-                regionUnoLaboratirios.start();
-                regionUnoDoctores.start();
-                regionDosLaboratorios.start();
-                regionsDosDoctorees.start();
-                
-                try {
-                regionUnoLaboratirios.join();
-                regionUnoDoctores.join();
-                regionDosLaboratorios.join();
-                regionsDosDoctorees.join();
-                } 
-                catch ( Exception e) 
+            finDia=0;
+            while (finDia==0) {
+                if((int)Math.floor(Math.random()*5 )<=3)
                 {
-                    System.out.println("Interrupted");
+                    if((int)Math.floor(Math.random()*2 )==1 && region1.cantidadCasos()>0)
+                    {
+                        if(region1.getCaso(0).getEstado().equals("Fallecido"))
+                        {
+                            Caso caso = region1.getCaso((int)Math.floor(Math.random()*region1.sizeCasos()));
+                            region1.getCasoID(caso.getId()).setProcesado();
+                            
+                            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD1, region1.getCaso(0).getId());
+                            regionUnoDoctores.start();
+                            try 
+                            {
+                                regionUnoDoctores.join();
+                            } 
+                            catch ( Exception e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+                        }
+                        else
+                        {
+                            procesarCaso regionUnoLaboratorios = new procesarCaso( region1, PD2, region1.getCaso(0).getId());
+                            regionUnoLaboratorios.start();
+                            try 
+                            {
+                                regionUnoLaboratorios.join();
+                            } 
+                            catch ( Exception e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+
+
+                        }
+                    }
+                    else if(region2.cantidadCasos()>0)
+                    {
+                        
+                        Caso caso = region2.getCaso((int)Math.floor(Math.random()*region2.sizeCasos()));
+                        region2.getCasoID(caso.getId()).setProcesado();
+                        
+                        if(region2.getCaso(0).getEstado().equals("Fallecido"))
+                        {
+                            procesarCaso regionDosDoctores = new procesarCaso( region2, PD1, region2.getCaso(0).getId());
+                            regionDosDoctores.start();
+                            try 
+                            {
+                                regionDosDoctores.join();
+                            } 
+                            catch ( Exception e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+                        }
+                        else
+                        {
+                            
+                            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD2, region2.getCaso(0).getId());
+                            regionDosLaboratorios.start();
+                            try 
+                            {
+                                regionDosLaboratorios.join();
+                            } 
+                            catch ( Exception e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+                        }
+                    }
                 }
-                TimeUnit.SECONDS.sleep(1);
+                else
+                {
+                    while(finDia==0)
+                    {
+                        if(!PD1.ocupado && !PD2.ocupado)
+                        {
+                            finDia=1;
+                            TimeUnit.SECONDS.sleep(4);
+                            System.out.println("Fin del dia "+ i);
+                        }
+                    }
+                    
+                    
+                }
+                    
+                
+                
+                
+                
+                
+               // TimeUnit.SECONDS.sleep(1);
+                
                 numCasos++;
 
                 }
-            
-            
-            
-            
-            
-
            
         }
         

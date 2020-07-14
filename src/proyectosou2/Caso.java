@@ -25,6 +25,7 @@ public class Caso {
     private final int id = this.hashCode();
     private String hora;
     private String estado;
+    private Boolean procesado=false;
 
     public Caso(String nombrePaciente, Fuente fuente, Region region, String estado) {
         this.nombrePaciente = nombrePaciente;
@@ -42,6 +43,10 @@ public class Caso {
         this.nombrePaciente = nombrePaciente;
     }
 
+    public void setProcesado()
+    {
+        procesado = true;
+    }
     public Fuente getFuente() {
         return fuente;
     }
@@ -52,6 +57,11 @@ public class Caso {
 
     public Region getRegion() {
         return region;
+    }
+    
+    public boolean getProcesado()
+    {
+        return procesado;
     }
 
     public void setRegion(Region region) {

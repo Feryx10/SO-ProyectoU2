@@ -43,6 +43,11 @@ class Region {
         laboratorios.add(laboratorio);
     }
     
+    public void agregarCaso(Caso caso)
+    {
+        casos.add(caso);
+    }
+    
     public void eliminarDoctor(int i)
     {
         for (int j = 0; j < doctores.size(); j++) {
@@ -91,5 +96,42 @@ class Region {
         return casos.get(i);
     }
     
+    public Caso getCasoID(int i)
+    {
+        for (int j = 0; j < casos.size(); j++) {
+            if(casos.get(j).getId()==i)
+            {
+                return casos.get(j);
+            }
+        }
+        System.out.println("xd");
+        return null;
+    }
     
+    public void removeCasoID(int i)
+    {
+        for (int j = 0; j < casos.size()-1; j++) {
+            if(casos.get(j).getId()==i)
+            {
+                casos.remove(j);
+                return;
+            }
+        }
+        System.out.println("xd2");
+    }
+    
+    public int sizeDoctores()
+    {
+        return doctores.size();
+    }
+    
+    public int sizeLaboratorios()
+    {
+        return doctores.size();
+    }
+    
+    public int sizeCasos()
+    {
+        return casos.size();
+    }
 }
