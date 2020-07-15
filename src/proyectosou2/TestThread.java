@@ -158,9 +158,7 @@ public class TestThread {
             
             if (entrada==3) {
                 
-                int dias=0;                
-                System.out.print("Ingrese cantidad de días: ");
-                dias=sc.nextInt();
+                int dias=0;             
                 iniciarSimulacion(dias);
             }
             
@@ -354,25 +352,28 @@ public class TestThread {
  
         PrintDemo PD1 = new PrintDemo();
         PrintDemo PD2 = new PrintDemo();
-        int totalCasos = (region1.cantidadCasos()+region2.cantidadCasos());
+        int totalCasos = (region1.casosDisponibles()+region2.casosDisponibles());
+        System.out.println(totalCasos);
         int finDia;
         
         int numCasos = 0;
       // wait for threads to end
-        for (int i = 1; i < totalCasos; i++) {
+        for (int i = 1; 0 < totalCasos; i++) {
             System.out.println("Dia: "+i);
             finDia=0;
             while (finDia==0) {
+                
                 if((int)Math.floor(Math.random()*5 )<=3)
                 {
-                    if((int)Math.floor(Math.random()*2 )==1 && region1.cantidadCasos()>0)
+                    if((int)Math.floor(Math.random()*2 )==1)
                     {
-                        if(region1.getCaso(0).getEstado().equals("Fallecido"))
+                        Caso caso = region1.casosNuevos();
+                        if(caso != null && caso.getEstado().equals("Fallecido"))
                         {
-                            Caso caso = region1.getCaso((int)Math.floor(Math.random()*region1.sizeCasos()));
-                            region1.getCasoID(caso.getId()).setProcesado();
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
                             
-                            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD1, region1.getCaso(0).getId());
+                            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD1, caso.getId());
                             regionUnoDoctores.start();
                             try 
                             {
@@ -383,9 +384,11 @@ public class TestThread {
                                 System.out.println("Interrupted");
                             }
                         }
-                        else
+                        else if (caso!=null)
                         {
-                            procesarCaso regionUnoLaboratorios = new procesarCaso( region1, PD2, region1.getCaso(0).getId());
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionUnoLaboratorios = new procesarCaso( region1, PD2, caso.getId());
                             regionUnoLaboratorios.start();
                             try 
                             {
@@ -402,12 +405,13 @@ public class TestThread {
                     else if(region2.cantidadCasos()>0)
                     {
                         
-                        Caso caso = region2.getCaso((int)Math.floor(Math.random()*region2.sizeCasos()));
-                        region2.getCasoID(caso.getId()).setProcesado();
+                        Caso caso = region2.casosNuevos();
                         
-                        if(region2.getCaso(0).getEstado().equals("Fallecido"))
+                        if(caso != null && caso.getEstado().equals("Fallecido"))
                         {
-                            procesarCaso regionDosDoctores = new procesarCaso( region2, PD1, region2.getCaso(0).getId());
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionDosDoctores = new procesarCaso( region2, PD1, caso.getId());
                             regionDosDoctores.start();
                             try 
                             {
@@ -418,10 +422,11 @@ public class TestThread {
                                 System.out.println("Interrupted");
                             }
                         }
-                        else
+                        else if (caso != null)
                         {
-                            
-                            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD2, region2.getCaso(0).getId());
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD2, caso.getId());
                             regionDosLaboratorios.start();
                             try 
                             {
@@ -444,22 +449,20 @@ public class TestThread {
                             TimeUnit.SECONDS.sleep(4);
                             System.out.println("Fin del dia "+ i);
                         }
+                        
+                        
                     }
                     
                     
                 }
-                    
-                
-                
-                
-                
                 
                // TimeUnit.SECONDS.sleep(1);
                 
                 numCasos++;
 
                 }
-           
+        
+            totalCasos = (region1.casosDisponibles()+region2.casosDisponibles());
         }
         
         

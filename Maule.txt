@@ -380,3 +380,179 @@
  Estado:Contagiado
  [gregory]: 1836019240 Maule/Laboratorio Noctorspot Nombre:Jose Diaz
  Estado:Contagiado
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Luciana Bravo Errasti  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1836019240 Maule/Iovani Lanis Cediel  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 1173230247 Maule/Laboratorio Creative Envirole Nombre:Carlos Soto
+ Estado:Contagiado
+ [gregory]: 1173230247 Maule/Laboratorio Creative Envirole Nombre:Carlos Soto
+ Estado:Contagiado
+ [gregory]: 1173230247 Maule/Laboratorio Creative Envirole Nombre:Carlos Soto
+ Estado:Contagiado
+ [gregory]: 1173230247 Maule/Laboratorio Creative Envirole Nombre:Carlos Soto
+ Estado:Contagiado
+ [gregory]: 325040804 Bio-Bio/Octavio Sariego Guinda  Nombre:Luis Perez
+ Estado:Fallecido
+ [gregory]: 1173230247 Maule/Ekaterina Puebla Limofer  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 621009875 Bio-Bio/Zineb Maoño Cos  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 1265094477 Maule/Laboratorio Creative Envirole Nombre:Rosa Martinez
+ Estado:Contagiado
+ [gregory]: 2125039532 Maule/Gumersindo Medeiros Izcaray  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Salustiano Zorrilla Morelos  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 2133927002 Maule/Gumersindo Medeiros Izcaray  Nombre:Juan Rojas
+ Estado:Fallecido
+ [gregory]: 1836019240 Maule/Octavio Sariego Guinda  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 1173230247 Bio-Bio/Octavio Sariego Guinda  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Laboratorio Noctorspot Nombre:Luis Perez
+ Estado:Contagiado
+ [gregory]: 621009875 Maule/Paola Pison Megid  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Laboratorio Nasketz Nombre:Jorge Contreras
+ Estado:Contagiado
+ [gregory]: 312714112 Maule/Iovani Lanis Cediel  Nombre:Cristian Morales
+ Estado:Fallecido
+ [gregory]: 2125039532 Maule/Laboratorio Nasketz Nombre:Manuel Sepulveda
+ Estado:Contagiado
+ [gregory]: 1956725890 Maule/Oliver Hesles Ledrado  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1836019240 Bio-Bio/Nara Boliana Gayferos  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Iovani Lanis Cediel  Nombre:Luis Perez
+ Estado:Fallecido
+ [gregory]: 1173230247 Bio-Bio/Iovani Lanis Cediel  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Laboratorio Vors Nombre:Jorge Contreras
+ Estado:Contagiado
+ [gregory]: 2125039532 Bio-Bio/Paola Pison Megid  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+ [gregory]: 2133927002 Bio-Bio/Octavio Sariego Guinda  Nombre:Juan Rojas
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Laboratorio Hamaren Nombre:Maria Gonzalez
+ Estado:Contagiado
+ [gregory]: 1836019240 Maule/Iovani Lanis Cediel  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 621009875 Maule/Laboratorio Fastbook Nombre:Ana Silva
+ Estado:Contagiado
+ [gregory]: 325040804 Maule/Laboratorio Creative Envirole Nombre:Luis Perez
+ Estado:Contagiado
+ [gregory]: 2125039532 Maule/Paola Pison Megid  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+ [gregory]: 312714112 Maule/Laboratorio Noctorspot Nombre:Cristian Morales
+ Estado:Contagiado
+ [gregory]: 1956725890 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 2133927002 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Juan Rojas
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Laboratorio Vors Nombre:Luis Perez
+ Estado:Contagiado
+ [gregory]: 1836019240 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 1173230247 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 621009875 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Salustiano Zorrilla Morelos  Nombre:Jorge Contreras
+ Estado:Fallecido
+ [gregory]: 1265094477 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Rosa Martinez
+ Estado:Fallecido
+ [gregory]: 2125039532 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+ [gregory]: 1956725890 Maule/Salustiano Zorrilla Morelos  Nombre:Maria Gonzalez
+ Estado:Fallecido
+ [gregory]: 1836019240 Maule/Oliver Hesles Ledrado  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Laboratorio Future Life Body Nombre:Luis Perez
+ Estado:Contagiado
+ [gregory]: 856419764 Maule/Octavio Sariego Guinda  Nombre:Jorge Contreras
+ Estado:Fallecido
+ [gregory]: 1173230247 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 621009875 Maule/Luciana Bravo Errasti  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 692404036 Maule/Laboratorio Soapsounds Nombre:Victor Rodriguez
+ Estado:Contagiado
+ [gregory]: 2125039532 Bio-Bio/Iovani Lanis Cediel  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+ [gregory]: 1265094477 Maule/Iovani Lanis Cediel  Nombre:Rosa Martinez
+ Estado:Fallecido
+ [gregory]: 1554874502 Bio-Bio/Salustiano Zorrilla Morelos  Nombre:Francisco Lopez
+ Estado:Fallecido
+ [gregory]: 1846274136 Maule/Laboratorio Noctorspot Nombre:Hector Araya
+ Estado:Contagiado
+ [gregory]: 1627674070 Maule/Oliver Hesles Ledrado  Nombre:Sergio Hernandez
+ Estado:Fallecido
+ [gregory]: 1360875712 Bio-Bio/Nara Boliana Gayferos  Nombre:Pedro Torres
+ Estado:Fallecido
+ [gregory]: 1625635731 Bio-Bio/Iovani Lanis Cediel  Nombre:Claudia Espinoza
+ Estado:Fallecido
+ [gregory]: 1304836502 Maule/Laboratorio Fastbook Nombre:Pablo Vasquez
+ Estado:Contagiado
+ [gregory]: 1725154839 Maule/Zineb Maoño Cos  Nombre:Claudio Gutierrez
+ Estado:Fallecido
+ [gregory]: 723074861 Maule/Laboratorio Hamaren Nombre:Jaime Vargas
+ Estado:Contagiado
+ [gregory]: 1872034366 Maule/Laboratorio Nasketz Nombre:Eduardo Ramirez
+ Estado:Contagiado
+ [gregory]: 1956725890 Maule/Laboratorio Mass Yarns Nombre:Maria Gonzalez
+ Estado:Contagiado
+ [gregory]: 2133927002 Bio-Bio/Ekaterina Puebla Limofer  Nombre:Juan Rojas
+ Estado:Fallecido
+ [gregory]: 1836019240 Bio-Bio/Luciana Bravo Errasti  Nombre:Jose Diaz
+ Estado:Fallecido
+ [gregory]: 325040804 Bio-Bio/Ekaterina Puebla Limofer  Nombre:Luis Perez
+ Estado:Fallecido
+ [gregory]: 1173230247 Bio-Bio/Ekaterina Puebla Limofer  Nombre:Carlos Soto
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Laboratorio Creative Envirole Nombre:Jorge Contreras
+ Estado:Contagiado
+ [gregory]: 621009875 Bio-Bio/Luciana Bravo Errasti  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 1846274136 Maule/Laboratorio Noctorspot Nombre:Hector Araya
+ Estado:Contagiado
+ [gregory]: 1265094477 Bio-Bio/Ekaterina Puebla Limofer  Nombre:Rosa Martinez
+ Estado:Fallecido
+ [gregory]: 1554874502 Maule/Laboratorio Noctorspot Nombre:Francisco Lopez
+ Estado:Contagiado
+ [gregory]: 1360875712 Bio-Bio/Luciana Bravo Errasti  Nombre:Pedro Torres
+ Estado:Fallecido
+ [gregory]: 644117698 Maule/Laboratorio Vors Nombre:Miguel Valenzuela
+ Estado:Contagiado
+ [gregory]: 1625635731 Bio-Bio/Octavio Sariego Guinda  Nombre:Claudia Espinoza
+ Estado:Fallecido
+ [gregory]: 1581781576 Maule/Laboratorio Creative Envirole Nombre:Patricio Reyes
+ Estado:Contagiado
+ [gregory]: 1872034366 Maule/Octavio Sariego Guinda  Nombre:Eduardo Ramirez
+ Estado:Fallecido
+ [gregory]: 1878246837 Bio-Bio/Oliver Hesles Ledrado  Nombre:Margarita Fernandez
+ Estado:Fallecido
+ [gregory]: 225534817 Maule/Laboratorio Fastbook Nombre:Alejandro Tapia
+ Estado:Contagiado
+ [gregory]: 1670675563 Maule/Laboratorio Soapsounds Nombre:Mario Castro
+ Estado:Contagiado
+ [gregory]: 895328852 Maule/Salustiano Zorrilla Morelos  Nombre:Ricardo Alvarez
+ Estado:Fallecido
+ [gregory]: 723074861 Maule/Gumersindo Medeiros Izcaray  Nombre:Jaime Vargas
+ Estado:Fallecido
+ [gregory]: 1725154839 Maule/Iovani Lanis Cediel  Nombre:Claudio Gutierrez
+ Estado:Fallecido

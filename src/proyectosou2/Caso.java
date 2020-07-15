@@ -20,6 +20,7 @@ import java.util.Calendar;
 
 public class Caso {
     private String nombrePaciente;
+    private int diaProcesado;
     private Fuente fuente;
     private Region region;
     private final int id = this.hashCode();
@@ -53,6 +54,11 @@ public class Caso {
 
     public void setFuente(Fuente fuente) {
         this.fuente = fuente;
+    }
+    
+    public void setDiaProcesado(int i)
+    {
+        this.diaProcesado=i;
     }
 
     public Region getRegion() {

@@ -68,6 +68,29 @@ class Region {
         }
     }
     
+    public Caso casosNuevos()
+    {
+        for (int i = 0; i < casos.size(); i++) {
+            if(!casos.get(i).getProcesado())
+            {
+                return casos.get(i);
+            }
+        }
+        return null;
+    }
+    
+    public int casosDisponibles()
+    {
+        int casosdisp=0;
+        for (int i = 0; i < casos.size(); i++) {
+            if(!casos.get(i).getProcesado())
+            {
+                casosdisp++;
+            }
+        }
+        return casosdisp;
+    }
+    
     public Fuente obtenerDoctor(int i)
     {
         return doctores.get(i);
