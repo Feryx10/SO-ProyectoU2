@@ -1,0 +1,8 @@
+ Lista oficial balance dia 5
+
+ [gregory]: 1173230247 Maule/Salustiano Zorrilla Morelos  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Laboratorio Creative Envirole Nombre:Rosa Martinez
+ Estado:Contagiado
+ [gregory]: 621009875 Bio-Bio/Gumersindo Medeiros Izcaray  Nombre:Manuel Sepulveda
+ Estado:Fallecido

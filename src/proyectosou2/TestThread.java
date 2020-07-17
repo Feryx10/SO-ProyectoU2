@@ -21,10 +21,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import static java.lang.Thread.sleep;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -39,7 +38,7 @@ class PrintDemo {
             System.out.println("Region: " +  nombre +", Fuente:"+ fuente + " Inicia" );            
             for(int i = 5; i > 0; i--) 
             {
-         //       System.out.println("Counter   ---   "  + i );
+        //       System.out.println("Counter   ---   "  + i );
             }  
         } catch (Exception e) {
             System.out.println("Thread  interrupted.");
@@ -67,17 +66,17 @@ class procesarCaso extends Thread  {
     private int caso;
     PrintDemo  PD;
 
-    procesarCaso( Region region, PrintDemo pd, int caso) {
+    procesarCaso(Region region, PrintDemo pd, int caso) {
        PD = pd;
        this.fuente = region.getCasoID(caso).getFuente().getNombre();
        this.caso = caso;
        this.region=region;
     }
    
+    @Override
     public void run() {
-        synchronized(PD) {
-            new Fichero().escribir(region.getNombre(), region.getCasoID(caso));
-            
+        synchronized(PD) {     
+            new Fichero().escribir(region.getNombre(), region.getCasoID(caso),true);            
             try {
                 PD.printCount(region.getNombre(), fuente);
             } catch (InterruptedException ex) {
@@ -89,6 +88,7 @@ class procesarCaso extends Thread  {
       
    }
 
+    @Override
    public void start () {
   //    System.out.println("Starting " +  nombreRegion +", "+ fuente );
       if (t == null) {
@@ -103,10 +103,9 @@ public class TestThread {
     static Region region1 = new Region("Maule");
     static Region region2 = new Region("Bio-Bio");
 
-   public static void main(String args[]) throws InterruptedException {
-      
-        
-       
+   public static void main(String args[]) throws InterruptedException {    
+        new Fichero().escribir(region1.getNombre(),"",false);  
+        new Fichero().escribir(region2.getNombre(),"",false);   
         System.out.println("Bienvenido a la APP");
         int entrada=0;
         int region = 0;
@@ -273,7 +272,7 @@ public class TestThread {
    
    public static void generarCasos(int cantCasos)
    {
-       String nombreCasos =    "Maria Gonzalez\n"+
+       String nombreCasos =     "Maria Gonzalez\n"+
                                 "Juan Rojas\n"+
                                 "Jose Diaz\n"+
                                 "Luis Perez\n"+
@@ -379,7 +378,7 @@ public class TestThread {
                             {
                                 regionUnoDoctores.join();
                             } 
-                            catch ( Exception e) 
+                            catch (InterruptedException e) 
                             {
                                 System.out.println("Interrupted");
                             }
@@ -394,7 +393,7 @@ public class TestThread {
                             {
                                 regionUnoLaboratorios.join();
                             } 
-                            catch ( Exception e) 
+                            catch (InterruptedException e) 
                             {
                                 System.out.println("Interrupted");
                             }
@@ -417,9 +416,9 @@ public class TestThread {
                             {
                                 regionDosDoctores.join();
                             } 
-                            catch ( Exception e) 
+                            catch (InterruptedException e) 
                             {
-                                System.out.println("Interrupted");
+                                System.out.println("Interrupted "+e.getMessage());
                             }
                         }
                         else if (caso != null)
@@ -432,9 +431,9 @@ public class TestThread {
                             {
                                 regionDosLaboratorios.join();
                             } 
-                            catch ( Exception e) 
+                            catch (InterruptedException e) 
                             {
-                                System.out.println("Interrupted");
+                                System.out.println("Interrupted "+e.getMessage());
                             }
                         }
                     }
@@ -448,20 +447,24 @@ public class TestThread {
                             finDia=1;
                             TimeUnit.SECONDS.sleep(4);
                             System.out.println("Fin del dia "+ i);
-                        }
-                        
-                        
-                    }
-                    
-                    
-                }
-                
-               // TimeUnit.SECONDS.sleep(1);
-                
-                numCasos++;
-
-                }
-        
+                            new Fichero().escribir(region1.getNombre(),"Fin del dia "+ i,true); 
+                            new Fichero().escribir(region2.getNombre(),"Fin del dia "+ i,true); 
+                            ArrayList<String> aux = new Fichero().leer(region1.getNombre(),i); 
+                            new Fichero().escribir("Documento_Oficial_Dia "+i, " Lista oficial balance dia "+i,false);  
+                            new Fichero().escribir("Documento_Oficial_Dia "+i, "",true);    
+                            for (int j = 0; j < aux.size(); j++) {
+                                new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);                                
+                            }
+                            aux = new Fichero().leer(region2.getNombre(),i); 
+                            for (int j = 0; j < aux.size(); j++) {
+                                new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);  
+                            }                              
+                        }                   
+                    }                   
+                }               
+                //  TimeUnit.SECONDS.sleep(1);                
+                    numCasos++;
+                }        
             totalCasos = (region1.casosDisponibles()+region2.casosDisponibles());
         }
         
@@ -485,34 +488,57 @@ class Fichero implements FuncionFichero {
     }
     
     @Override
-    public void escribir(String nombreArchivo, Caso caso) {        
+    public void escribir(String nombreArchivo, Caso caso, boolean sobrescribir) {        
        try {
             File file = new File(nombreArchivo+".txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
-            FileOutputStream fos = new FileOutputStream(file, true);
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+            FileOutputStream fos = new FileOutputStream(file, sobrescribir);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos)) ;
             bw.write(caso.toString());
             bw.newLine();
-            bw.close();
+            bw.close();           
+       } catch (IOException ex) {
+           System.out.println(ex.getMessage());
+       }
+    }
+    
+    @Override
+    public void escribir(String nombreArchivo, String texto, boolean sobrescribir) {        
+       try {
+            File file = new File(nombreArchivo+".txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileOutputStream fos = new FileOutputStream(file, sobrescribir);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos)) ;
+            bw.write(texto);
+            bw.newLine();
+            bw.close();           
        } catch (IOException ex) {
            System.out.println(ex.getMessage());
        }
     }
 
     @Override
-    public String[] leer(String nombreArchivo) { 
-       String[]aux = null;       
+    public ArrayList <String> leer(String nombreArchivo, int dia) { 
+       ArrayList <String> aux = new ArrayList <>();    
        try {        
-            File file = new File("/"+nombreArchivo+".txt");      
+            File file = new File(nombreArchivo+".txt");      
             if (!file.exists()) {
                 file.createNewFile();
             }
             BufferedReader br = new BufferedReader(new FileReader(file));
-            String linea;              
-            while((linea = br.readLine())!=null){
-                aux = linea.split("");
+            String linea;         
+            while((linea = br.readLine())!=null){    
+                if(linea.equals("Fin del dia "+ (dia-1))){
+                    aux.clear();                    
+                }      
+                if(linea.equals("Fin del dia "+ dia))
+                    break;   
+                if(!linea.equals("Fin del dia "+ (dia-1))) 
+                    aux.add(linea);                           
             }        
        } catch (IOException ex) {
            System.out.println(ex.getMessage());
