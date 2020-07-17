@@ -1,0 +1,24 @@
+
+ [gregory]: 685325104 Bio-Bio/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
+ Estado:Fallecido
+Fin del dia 1
+ [gregory]: 1735600054 Maule/Salustiano Zorrilla Morelos  Nombre:Juan Rojas
+ Estado:Fallecido
+ [gregory]: 21685669 Maule/Salustiano Zorrilla Morelos  Nombre:Jose Diaz
+ Estado:Fallecido
+Fin del dia 2
+Fin del dia 3
+ [gregory]: 2133927002 Bio-Bio/Octavio Sariego Guinda  Nombre:Luis Perez
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Laboratorio Hamaren Nombre:Jorge Contreras
+ Estado:Contagiado
+ [gregory]: 1836019240 Maule/Oliver Hesles Ledrado  Nombre:Carlos Soto
+ Estado:Fallecido
+Fin del dia 4
+ [gregory]: 1173230247 Maule/Salustiano Zorrilla Morelos  Nombre:Ana Silva
+ Estado:Fallecido
+ [gregory]: 856419764 Maule/Laboratorio Creative Envirole Nombre:Rosa Martinez
+ Estado:Contagiado
+ [gregory]: 621009875 Bio-Bio/Gumersindo Medeiros Izcaray  Nombre:Manuel Sepulveda
+ Estado:Fallecido
+Fin del dia 5

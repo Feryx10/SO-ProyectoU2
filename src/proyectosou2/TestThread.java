@@ -21,10 +21,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
-import static java.lang.Thread.sleep;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -32,45 +31,64 @@ import java.util.logging.Logger;
 
 class PrintDemo {    
     
-    public void printCount(String nombre, String fuente) {
+    boolean ocupado;
+    public void printCount(String nombre, String fuente) throws InterruptedException {
+        ocupado = true;
         try {
-            System.out.println("Starting " +  nombre +", "+ fuente );            
+            System.out.println("Region: " +  nombre +", Fuente:"+ fuente + " Inicia" );            
             for(int i = 5; i > 0; i--) 
             {
-         //       System.out.println("Counter   ---   "  + i );
+        //       System.out.println("Counter   ---   "  + i );
             }  
         } catch (Exception e) {
             System.out.println("Thread  interrupted.");
         }
-        System.out.println("Thread " +  nombre+", "+fuente + " exiting.");
         
+        TimeUnit.SECONDS.sleep(1);
+        System.out.println("Region: " +  nombre+", Fuente: "+fuente + " Finaliza.");
+        ocupado=false;
+        
+        
+    }
+    
+    public boolean ocupado()
+    {
+        return ocupado;
     }
 }
 
 
 class procesarCaso extends Thread  {
     private Thread t;
-    private String nombreRegion;
+    private Region region;
     private int idFuente;
     private String fuente;
+    private int caso;
     PrintDemo  PD;
 
-    procesarCaso( Region region,  PrintDemo pd, String fuente) {
-       nombreRegion = region.getNombre();
+    procesarCaso(Region region, PrintDemo pd, int caso) {
        PD = pd;
-       this.fuente = fuente;
+       this.fuente = region.getCasoID(caso).getFuente().getNombre();
+       this.caso = caso;
+       this.region=region;
     }
    
+    @Override
     public void run() {
-        synchronized(PD) {
-            new Fichero().escribir("region1", new Caso("enfero enfermado",new Fuente("Doctor pino"), new Region (nombreRegion), "maomeno"));
+        synchronized(PD) {     
+            new Fichero().escribir(region.getNombre(), region.getCasoID(caso),true);            
+            try {
+                PD.printCount(region.getNombre(), fuente);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(procesarCaso.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
-            PD.printCount(nombreRegion, fuente);
       }
     //  System.out.println("Thread " +  nombreRegion+", "+fuente + " exiting.");
       
    }
 
+    @Override
    public void start () {
   //    System.out.println("Starting " +  nombreRegion +", "+ fuente );
       if (t == null) {
@@ -85,10 +103,9 @@ public class TestThread {
     static Region region1 = new Region("Maule");
     static Region region2 = new Region("Bio-Bio");
 
-   public static void main(String args[]) throws InterruptedException {
-      
-        
-       
+   public static void main(String args[]) throws InterruptedException {    
+        new Fichero().escribir(region1.getNombre(),"",false);  
+        new Fichero().escribir(region2.getNombre(),"",false);   
         System.out.println("Bienvenido a la APP");
         int entrada=0;
         int region = 0;
@@ -131,35 +148,17 @@ public class TestThread {
             
             if (entrada==2) {
                 System.out.println("");
-                System.out.println("Elija región");
-                System.out.println("[1] Región A");
-                System.out.println("[2] Región B");
-                System.out.print("Ingrese un número: ");
-                region=sc.nextInt();
-                    
-                if (region>2 || region <1) {
-                    System.out.println("");
-                    System.out.println("Entrada inválida");
-                    System.out.println("");
-                }
+                System.out.print("Ingrese cantidad de casos: ");
+                int cant_casos=0;
+                cant_casos = sc.nextInt();
+                generarCasos(cant_casos);
                 
-                else {
-                    int cant_contagiados=0;
-                    int cant_muertos=0;
-                        
-                    System.out.print("Ingrese cantidad de contagiados: ");
-                    cant_contagiados=sc.nextInt();
-                    System.out.print("Ingrese cantidad de muertos: ");
-                    cant_muertos = sc.nextInt();
-                }
             }
             
             if (entrada==3) {
                 
-                int dias=0;
-                iniciarSimulacion();
-                System.out.print("Ingrese cantidad de días: ");
-                dias=sc.nextInt();
+                int dias=0;             
+                iniciarSimulacion(dias);
             }
             
             if (entrada==4) {
@@ -239,36 +238,7 @@ public class TestThread {
                                 "Ubega\n" +
                                 "Writiner";
         
-        String nombreCasos =    "Maria Gonzalez\n"+
-                                "Juan Rojas\n"+
-                                "Jose Diaz\n"+
-                                "Luis Perez\n"+
-                                "Carlos Soto\n"+
-                                "Jorge Contreras\n"+
-                                "Ana Silva\n"+
-                                "Rosa Martinez\n"+
-                                "Manuel Sepulveda\n"+
-                                "Cristian Morales\n"+
-                                "Victor Rodriguez\n"+
-                                "Francisco Lopez\n"+
-                                "Hector Araya\n"+
-                                "Patricia Fuentes\n"+
-                                "Sergio Hernandez\n"+
-                                "Pedro Torres\n"+
-                                "Claudia Espinoza\n"+
-                                "Carolina Flores\n"+
-                                "Rodrigo Castillo\n"+
-                                "Miguel Valenzuela\n"+
-                                "Eduardo Ramirez\n"+
-                                "Patricio Reyes\n"+
-                                "Claudio Gutierrez\n"+
-                                "Mario Castro\n"+
-                                "Jaime Vargas\n"+
-                                "Ricardo Alvarez\n"+
-                                "Pablo Vasquez\n"+
-                                "Alejandro Tapia\n"+
-                                "Margarita Fernandez\n"+
-                                "Carmen Lopez\n";
+        
                 
         String[] arrDocs = nombres.split("\n"); 
   
@@ -300,47 +270,202 @@ public class TestThread {
         
    }
    
+   public static void generarCasos(int cantCasos)
+   {
+       String nombreCasos =     "Maria Gonzalez\n"+
+                                "Juan Rojas\n"+
+                                "Jose Diaz\n"+
+                                "Luis Perez\n"+
+                                "Carlos Soto\n"+
+                                "Jorge Contreras\n"+
+                                "Ana Silva\n"+
+                                "Rosa Martinez\n"+
+                                "Manuel Sepulveda\n"+
+                                "Cristian Morales\n"+
+                                "Victor Rodriguez\n"+
+                                "Francisco Lopez\n"+
+                                "Hector Araya\n"+
+                                "Patricia Fuentes\n"+
+                                "Sergio Hernandez\n"+
+                                "Pedro Torres\n"+
+                                "Claudia Espinoza\n"+
+                                "Carolina Flores\n"+
+                                "Rodrigo Castillo\n"+
+                                "Miguel Valenzuela\n"+
+                                "Eduardo Ramirez\n"+
+                                "Patricio Reyes\n"+
+                                "Claudio Gutierrez\n"+
+                                "Mario Castro\n"+
+                                "Jaime Vargas\n"+
+                                "Ricardo Alvarez\n"+
+                                "Pablo Vasquez\n"+
+                                "Alejandro Tapia\n"+
+                                "Margarita Fernandez\n"+
+                                "Carmen Lopez\n";
+       
+       String[] arrCasos = nombreCasos.split("\n"); 
+       int randomgRegion;
+        for (int i=0; i<cantCasos; i++) 
+        {
+            randomgRegion = ((int)Math.floor(Math.random()*2)); //random de region
+            
+            if (randomgRegion==1)
+            {
+                if((int)Math.floor(Math.random()*2) == 1) //Random de dar caso a laboratorio o doctor
+                {
+                    Caso caso = new Caso(arrCasos[i], region1.obtenerDoctor((int)Math.floor(Math.random()*region1.sizeDoctores())), region1, "Fallecido");
+                    region1.agregarCaso(caso);
+                }
+                else
+                {
+                    Caso caso = new Caso(arrCasos[i], region1.obtenerLaboratorio((int)Math.floor(Math.random()*region1.sizeLaboratorios())), region1, "Contagiado");
+                    region1.agregarCaso(caso);
+                }
+                
+            }
+            else
+            {
+                if((int)Math.floor(Math.random()*2) == 1)// Random de dar caso a lab o doc
+                {
+                    
+                    Caso caso = new Caso(arrCasos[i], region2.obtenerDoctor((int)Math.floor(Math.random()*region2.sizeDoctores())), region2, "Fallecido");
+                    region1.agregarCaso(caso);
+            
+                }
+                else
+                {
+                    Caso caso = new Caso(arrCasos[i], region2.obtenerLaboratorio((int)Math.floor(Math.random()*region2.sizeLaboratorios())), region2, "Contagiado");
+                    region2.agregarCaso(caso);
+                }
+                
+            }
+            
+        }
+       
+   }
    
    
-   
-   public static void iniciarSimulacion() throws InterruptedException
+   public static void iniciarSimulacion(int dias) throws InterruptedException
    {    
        
  
         PrintDemo PD1 = new PrintDemo();
         PrintDemo PD2 = new PrintDemo();
+        int totalCasos = (region1.casosDisponibles()+region2.casosDisponibles());
+        System.out.println(totalCasos);
+        int finDia;
         
-        
-        
-
+        int numCasos = 0;
       // wait for threads to end
-        for (int i = 1; i < 10; i++) {
-            
+        for (int i = 1; 0 < totalCasos; i++) {
             System.out.println("Dia: "+i);
-            procesarCaso regionUnoLaboratirios = new procesarCaso( region1, PD1, "Lab" );
-            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD2, "Doc" );
-            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD1, "Lab");
-            procesarCaso regionsDosDoctorees = new procesarCaso( region2, PD2, "Doc" );
-            regionUnoLaboratirios.start();
-            regionUnoDoctores.start();
-            regionDosLaboratorios.start();
-            regionsDosDoctorees.start();
-            regionUnoLaboratirios.start();
-            regionUnoDoctores.start();
-            regionDosLaboratorios.start();
-            regionsDosDoctorees.start();
-            try {
-                regionUnoLaboratirios.join();
-                regionUnoDoctores.join();
-                regionDosLaboratorios.join();
-                regionsDosDoctorees.join();
-            } 
-            catch ( Exception e) 
-            {
-                System.out.println("Interrupted");
-            }
-            TimeUnit.SECONDS.sleep(1);
-           
+            finDia=0;
+            while (finDia==0) {
+                
+                if((int)Math.floor(Math.random()*5 )<=3)
+                {
+                    if((int)Math.floor(Math.random()*2 )==1)
+                    {
+                        Caso caso = region1.casosNuevos();
+                        if(caso != null && caso.getEstado().equals("Fallecido"))
+                        {
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            
+                            procesarCaso regionUnoDoctores = new procesarCaso( region1, PD1, caso.getId());
+                            regionUnoDoctores.start();
+                            try 
+                            {
+                                regionUnoDoctores.join();
+                            } 
+                            catch (InterruptedException e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+                        }
+                        else if (caso!=null)
+                        {
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionUnoLaboratorios = new procesarCaso( region1, PD2, caso.getId());
+                            regionUnoLaboratorios.start();
+                            try 
+                            {
+                                regionUnoLaboratorios.join();
+                            } 
+                            catch (InterruptedException e) 
+                            {
+                                System.out.println("Interrupted");
+                            }
+
+
+                        }
+                    }
+                    else if(region2.cantidadCasos()>0)
+                    {
+                        
+                        Caso caso = region2.casosNuevos();
+                        
+                        if(caso != null && caso.getEstado().equals("Fallecido"))
+                        {
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionDosDoctores = new procesarCaso( region2, PD1, caso.getId());
+                            regionDosDoctores.start();
+                            try 
+                            {
+                                regionDosDoctores.join();
+                            } 
+                            catch (InterruptedException e) 
+                            {
+                                System.out.println("Interrupted "+e.getMessage());
+                            }
+                        }
+                        else if (caso != null)
+                        {
+                            caso.setDiaProcesado(i);
+                            caso.setProcesado();
+                            procesarCaso regionDosLaboratorios = new procesarCaso( region2, PD2, caso.getId());
+                            regionDosLaboratorios.start();
+                            try 
+                            {
+                                regionDosLaboratorios.join();
+                            } 
+                            catch (InterruptedException e) 
+                            {
+                                System.out.println("Interrupted "+e.getMessage());
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    while(finDia==0)
+                    {
+                        if(!PD1.ocupado && !PD2.ocupado)
+                        {
+                            finDia=1;
+                            TimeUnit.SECONDS.sleep(4);
+                            System.out.println("Fin del dia "+ i);
+                            new Fichero().escribir(region1.getNombre(),"Fin del dia "+ i,true); 
+                            new Fichero().escribir(region2.getNombre(),"Fin del dia "+ i,true); 
+                            ArrayList<String> aux = new Fichero().leer(region1.getNombre(),i); 
+                            new Fichero().escribir("Documento_Oficial_Dia "+i, " Lista oficial balance dia "+i,false);  
+                            new Fichero().escribir("Documento_Oficial_Dia "+i, "",true);    
+                            for (int j = 0; j < aux.size(); j++) {
+                                new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);                                
+                            }
+                            aux = new Fichero().leer(region2.getNombre(),i); 
+                            for (int j = 0; j < aux.size(); j++) {
+                                new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);  
+                            }                              
+                        }                   
+                    }                   
+                }               
+                //  TimeUnit.SECONDS.sleep(1);                
+                    numCasos++;
+                }        
+            totalCasos = (region1.casosDisponibles()+region2.casosDisponibles());
         }
         
         
@@ -363,34 +488,57 @@ class Fichero implements FuncionFichero {
     }
     
     @Override
-    public void escribir(String nombreArchivo, Caso caso) {        
+    public void escribir(String nombreArchivo, Caso caso, boolean sobrescribir) {        
        try {
             File file = new File(nombreArchivo+".txt");
             if (!file.exists()) {
                 file.createNewFile();
             }
-            FileOutputStream fos = new FileOutputStream(file, true);
-            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos));
+            FileOutputStream fos = new FileOutputStream(file, sobrescribir);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos)) ;
             bw.write(caso.toString());
             bw.newLine();
-            bw.close();
+            bw.close();           
+       } catch (IOException ex) {
+           System.out.println(ex.getMessage());
+       }
+    }
+    
+    @Override
+    public void escribir(String nombreArchivo, String texto, boolean sobrescribir) {        
+       try {
+            File file = new File(nombreArchivo+".txt");
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            FileOutputStream fos = new FileOutputStream(file, sobrescribir);
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fos)) ;
+            bw.write(texto);
+            bw.newLine();
+            bw.close();           
        } catch (IOException ex) {
            System.out.println(ex.getMessage());
        }
     }
 
     @Override
-    public String[] leer(String nombreArchivo) { 
-       String[]aux = null;       
+    public ArrayList <String> leer(String nombreArchivo, int dia) { 
+       ArrayList <String> aux = new ArrayList <>();    
        try {        
-            File file = new File("/"+nombreArchivo+".txt");      
+            File file = new File(nombreArchivo+".txt");      
             if (!file.exists()) {
                 file.createNewFile();
             }
             BufferedReader br = new BufferedReader(new FileReader(file));
-            String linea;              
-            while((linea = br.readLine())!=null){
-                aux = linea.split("");
+            String linea;         
+            while((linea = br.readLine())!=null){    
+                if(linea.equals("Fin del dia "+ (dia-1))){
+                    aux.clear();                    
+                }      
+                if(linea.equals("Fin del dia "+ dia))
+                    break;   
+                if(!linea.equals("Fin del dia "+ (dia-1))) 
+                    aux.add(linea);                           
             }        
        } catch (IOException ex) {
            System.out.println(ex.getMessage());

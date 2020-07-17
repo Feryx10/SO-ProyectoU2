@@ -21,10 +21,12 @@ import java.util.Objects;
 
 public class Caso {
     private String nombrePaciente;
+    private int diaProcesado;
     private Fuente fuente;
     private Region region;   
     private String hora;
     private String estado;
+    private Boolean procesado=false;
 
     public Caso(String nombrePaciente, Fuente fuente, Region region, String estado) {
         this.nombrePaciente = nombrePaciente;
@@ -42,6 +44,10 @@ public class Caso {
         this.nombrePaciente = nombrePaciente;
     }
 
+    public void setProcesado()
+    {
+        procesado = true;
+    }
     public Fuente getFuente() {
         return fuente;
     }
@@ -49,9 +55,19 @@ public class Caso {
     public void setFuente(Fuente fuente) {
         this.fuente = fuente;
     }
+    
+    public void setDiaProcesado(int i)
+    {
+        this.diaProcesado=i;
+    }
 
     public Region getRegion() {
         return region;
+    }
+    
+    public boolean getProcesado()
+    {
+        return procesado;
     }
 
     public void setRegion(Region region) {

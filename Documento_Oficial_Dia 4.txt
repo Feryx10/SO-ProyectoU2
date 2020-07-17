@@ -1,0 +1,8 @@
+ Lista oficial balance dia 4
+
+ [gregory]: 2133927002 Bio-Bio/Octavio Sariego Guinda  Nombre:Luis Perez
+ Estado:Fallecido
+ [gregory]: 325040804 Maule/Laboratorio Hamaren Nombre:Jorge Contreras
+ Estado:Contagiado
+ [gregory]: 1836019240 Maule/Oliver Hesles Ledrado  Nombre:Carlos Soto
+ Estado:Fallecido
