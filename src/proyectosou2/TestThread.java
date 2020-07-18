@@ -24,6 +24,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -104,8 +105,11 @@ public class TestThread {
     static Region region2 = new Region("Bio-Bio");
 
    public static void main(String args[]) throws InterruptedException {    
-        new Fichero().escribir(region1.getNombre(),"",false);  
-        new Fichero().escribir(region2.getNombre(),"",false);   
+        File reset = new File("../SO-ProyectoU2");
+        String [] auxReset = reset.list();     
+        for (String auxDelete : auxReset)                             
+            if (auxDelete.endsWith(".txt")) 
+                new File(auxDelete).delete();    
         System.out.println("Bienvenido a la APP");
         int entrada=0;
         int region = 0;
@@ -163,13 +167,90 @@ public class TestThread {
             
             if (entrada==4) {
                 System.out.println("");
+                File carpeta = new File("../SO-ProyectoU2");
                 System.out.println("[1] Eliminar Caso");
                 System.out.println("[2] Modificar Caso");
-                System.out.println("[3] Exportar Caso");
-                
+                System.out.println("[0] Salir");                
                 System.out.print("Ingrese un número: ");
                 int ent2=sc.nextInt();
-                
+                System.out.println("");
+                switch(ent2){
+                    default:{
+                        System.out.println("No se ha ingresado opcion valida");
+                        break;
+                    }
+                    case 1:{
+                        System.out.println("\f");                       
+                        System.out.println("");                        
+                        String [] aux = carpeta.list();
+                        int count = 1;
+                        for (String aux1 : aux) {                            
+                            if (aux1.startsWith("Documento_Oficial_Dia")) {
+                                System.out.println("["+count+++"] "+aux1);
+                            }
+                        }
+                        System.out.print("Seleccione archivo a modificar: ");
+                        int ent3=sc.nextInt();
+                        ArrayList<String> auxList = new Fichero().leer("Documento_Oficial_Dia "+ent3);
+                        if(auxList.isEmpty()||auxList.size()<=2){
+                            System.out.println("Archivo no existe o está vacio.");
+                            break;
+                        }
+                        count = 1;
+                        for (int i = 2; i < auxList.size(); i++) {                            
+                            System.out.println("["+count+++"] "+auxList.get(i));                            
+                        }
+                        System.out.print("Seleccione caso a eliminar: ");
+                        int ent4=sc.nextInt();
+                        auxList.remove(ent4+1);
+                        new Fichero().escribir("Documento_Oficial_Dia "+ent3,auxList.get(0),false);
+                        for (int i = 1; i < auxList.size(); i++) {
+                            new Fichero().escribir("Documento_Oficial_Dia "+ent3,auxList.get(i),true);
+                        }                        
+                        break;                        
+                    }
+                    case 2:{
+                        System.out.println("\f");                       
+                        System.out.println("");                        
+                        String [] aux = carpeta.list();
+                        int count = 1;
+                        for (String aux1 : aux) {                            
+                            if (aux1.startsWith("Documento_Oficial_Dia")) {
+                                System.out.println("["+count+++"] "+aux1);
+                            }
+                        }
+                        System.out.print("Seleccione archivo a modificar: ");
+                        int ent3=sc.nextInt();
+                        ArrayList<String> auxList = new Fichero().leer("Documento_Oficial_Dia "+ent3);
+                        if(auxList.isEmpty()||auxList.size()<=2){
+                            System.out.println("Archivo no existe o está vacio.");
+                            break;
+                        }
+                        count = 1;
+                        for (int i = 2; i < auxList.size(); i++) {
+                            if(auxList.get(i).endsWith("Contagiado"))                            
+                                System.out.println("["+count+++"] "+auxList.get(i));     
+                               
+                        }
+                        if(count==1)
+                            break;
+                        System.out.print("Seleccione caso a modificar: ");
+                        int ent4=sc.nextInt();
+                        while(!auxList.get(ent4).endsWith("Contagiado")){
+                            ent4=ent4+1;                            
+                        }
+                        auxList.add(ent4, auxList.get(ent4).replace("Contagiado", "Fallecido")); 
+                        auxList.remove(ent4+1);                       
+                        new Fichero().escribir("Documento_Oficial_Dia "+ent3,auxList.get(0),false);
+                        for (int i = 1; i < auxList.size(); i++) {
+                            new Fichero().escribir("Documento_Oficial_Dia "+ent3,auxList.get(i),true);
+                        }                        
+                        break;                        
+                    }
+                    case 0:{
+                        break;                        
+                    }
+                }
             }
             
             if (entrada==0) {
@@ -456,7 +537,7 @@ public class TestThread {
                                 new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);                                
                             }
                             aux = new Fichero().leer(region2.getNombre(),i); 
-                            for (int j = 0; j < aux.size(); j++) {
+                            for (int j = 0; j < aux.size(); j++){
                                 new Fichero().escribir("Documento_Oficial_Dia "+i, aux.get(j),true);  
                             }                              
                         }                   
@@ -479,8 +560,6 @@ public class TestThread {
         generarNombres(cant_doctores, cant_lab);
     }
 }
-
-
 
 class Fichero implements FuncionFichero {
     
@@ -539,6 +618,25 @@ class Fichero implements FuncionFichero {
                     break;   
                 if(!linea.equals("Fin del dia "+ (dia-1))) 
                     aux.add(linea);                           
+            }        
+       } catch (IOException ex) {
+           System.out.println(ex.getMessage());
+       }
+       return aux;
+    }
+    
+    @Override
+    public ArrayList <String> leer(String nombreArchivo) { 
+       ArrayList <String> aux = new ArrayList <>();    
+       try {        
+            File file = new File(nombreArchivo+".txt");      
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String linea;         
+            while((linea = br.readLine())!=null){                  
+                aux.add(linea);                           
             }        
        } catch (IOException ex) {
            System.out.println(ex.getMessage());

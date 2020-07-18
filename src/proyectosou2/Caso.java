@@ -96,7 +96,7 @@ public class Caso {
     
     @Override
     public String toString(){
-        return " ["+hora+"]: "+this.getId()+" "+region.getNombre()+"/"+fuente.nombre+" Nombre:"+nombrePaciente+"\n Estado:"+estado;
+        return " ["+hora+"]: ID:"+this.getId()+"  "+region.getNombre()+"/"+fuente.nombre+"  Nombre: "+nombrePaciente+" Estado: "+estado;
     }
     
     @Override

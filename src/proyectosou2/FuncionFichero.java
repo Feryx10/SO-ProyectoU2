@@ -22,5 +22,6 @@ public interface FuncionFichero {
     public void escribir(String nombreArchivo, Caso caso,boolean sobrescribir);    
     public void escribir(String nombreArchivo, String texto,boolean sobrescribir);
     public ArrayList <String> leer(String nombreArchivo, int dia);    
+    public ArrayList <String> leer(String nombreArchivo);
 }
 

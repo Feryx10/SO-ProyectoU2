@@ -1,8 +1,2 @@
  Lista oficial balance dia 1
 
-
- [gregory]: 685325104 Bio-Bio/Gumersindo Medeiros Izcaray  Nombre:Maria Gonzalez
- Estado:Fallecido
-
- [gregory]: 1265094477 Bio-Bio/Laboratorio Creative Envirole Nombre:Cristian Morales
- Estado:Contagiado

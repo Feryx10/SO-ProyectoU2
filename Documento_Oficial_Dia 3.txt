@@ -1,2 +1,5 @@
  Lista oficial balance dia 3
 
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:872635172  Bio-Bio/Octavio Sariego Guinda   Nombre: Maria Gonzalez Estado: Fallecido
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:358300431  Bio-Bio/Laboratorio Hamaren  Nombre: Luis Perez Estado: Fallecido
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:358300431  Bio-Bio/Laboratorio Hamaren  Nombre: Luis Perez Estado: Contagiado

@@ -1,8 +1,7 @@
-
- [gregory]: 1265094477 Bio-Bio/Laboratorio Creative Envirole Nombre:Cristian Morales
- Estado:Contagiado
 Fin del dia 1
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:-1510928071  Bio-Bio/Laboratorio Hamaren  Nombre: Juan Rojas Estado: Contagiado
 Fin del dia 2
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:358300431  Bio-Bio/Laboratorio Hamaren  Nombre: Luis Perez Estado: Contagiado
 Fin del dia 3
 Fin del dia 4
 Fin del dia 5

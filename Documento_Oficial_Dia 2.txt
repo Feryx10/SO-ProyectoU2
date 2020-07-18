@@ -1,6 +1,3 @@
  Lista oficial balance dia 2
 
- [gregory]: 1735600054 Maule/Salustiano Zorrilla Morelos  Nombre:Juan Rojas
- Estado:Fallecido
- [gregory]: 21685669 Maule/Salustiano Zorrilla Morelos  Nombre:Jose Diaz
- Estado:Fallecido
+ [Fri Jul 17 21:17:50 CLT 2020]: ID:-1510928071  Bio-Bio/Laboratorio Hamaren  Nombre: Juan Rojas Estado: Contagiado
